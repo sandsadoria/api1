@@ -9,7 +9,9 @@ class SCBManager {
         const val BASE_SCB_API = "https://api.partners.scb/partners/sandbox/"
 
         var client = OkHttpClient.Builder().addInterceptor(HeaderInterceptor()).build()
+
     }
+
 
     fun createService(): SCBApiService =
         Retrofit.Builder()
@@ -17,4 +19,5 @@ class SCBManager {
             .addConverterFactory(GsonConverterFactory.create())
             .client(client).build()
             .run { create(SCBApiService::class.java) }
+
 }

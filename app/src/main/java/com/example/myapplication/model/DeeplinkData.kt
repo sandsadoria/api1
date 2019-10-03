@@ -1,7 +1,7 @@
 package com.example.myapplication.model
 
-class DeeplinkData {
-//    "transactionType": "PURCHASE",
-//    "transactionSubType": ["BP"],
-//    "billPayment":
-}
+data class DeeplinkData (
+   val transactionType : TransType,
+   val transactionSubType : Array<String>,
+   val billPayment : DataBill
+)
